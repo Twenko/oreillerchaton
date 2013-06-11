@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  desc: MyString
+  path: MyString
+  gallery_id: 
+  activate: false
+
+two:
+  name: MyString
+  desc: MyString
+  path: MyString
+  gallery_id: 
+  activate: false

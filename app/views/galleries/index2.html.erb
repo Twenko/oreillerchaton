@@ -1,0 +1,44 @@
+<h1>Listing galleries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Desc</th>
+    <th>Presimage</th>
+  </tr>
+
+<tr><td>Actives:</td></tr>
+<% @galleries.each do |gallery| %>
+	<% if gallery.activate %>
+  <tr>
+    <td><%=h gallery.name %></td>
+    <td><%=h gallery.desc %></td>
+    <td><%= image_tag(gallery.presimage, :width => "100px") %></td>
+    <td><%=h gallery.activate %></td>
+    <td><%= link_to 'Show', gallery_path(gallery) %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td><%= link_to 'Add Pics', :controller => :galleries, :action => :show2, :id => gallery.id %></td>
+  </tr>
+  	<% end %>
+<% end %>
+
+<tr><td>Inactives:</td></tr>
+<% @galleries.each do |gallery| %>
+	<% if !gallery.activate %>
+  <tr>
+    <td><%=h gallery.name %></td>
+    <td><%=h gallery.desc %></td>
+    <td><%= image_tag(gallery.presimage, :width => "100px") %></td>
+    <td><%=h gallery.activate %></td>
+    <td><%= link_to 'Show', gallery_path(gallery) %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+  </tr>
+  	<% end %>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'New gallery', new_gallery_path %><br />
+<%= link_to 'Voir', galleries_path %>

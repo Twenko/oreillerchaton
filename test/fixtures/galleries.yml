@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  desc: 
+  presimage: 
+  activate: 
+
+two:
+  name: 
+  desc: 
+  presimage: 
+  activate: 

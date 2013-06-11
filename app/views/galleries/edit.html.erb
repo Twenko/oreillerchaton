@@ -1,0 +1,28 @@
+<h1>Editing gallery</h1>
+
+<% form_for(@gallery) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </p>
+  <p>
+    <%= f.label :presimage %><br />
+    <%= f.text_field :presimage %>
+  </p>
+  <p>
+    <%= f.label :activate %><br />
+    <%= f.check_box :activate%>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', gallery_path(@gallery) %><br />
+<%= link_to 'Back', :controller => :galleries, :action => :index2 %>

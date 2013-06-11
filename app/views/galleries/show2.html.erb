@@ -1,0 +1,36 @@
+<p>
+  <b>Name:</b>
+  <%=h @gallery.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @gallery.desc %>
+</p>
+
+<div class="imageRow">
+	<div class="set">
+<% @gallery.pictures.each do |pic| %>
+	<% if pic.activate %>
+	<% if @counting==0 %><%= '<div class="single first">'%><% end %>
+	<% if @counting==@gallery.pictures.length-1 %><%= '<div class="single last">'%><% end %>
+	<% if ((@counting!=@gallery.pictures.length-1)&&(@counting%5!=0)) %><%= '<div class="single"> '%><% end %>
+		<%=link_to (image_tag pic.path, :height => '175'), pic.path, :rel => 'lightbox[pics]', :title => pic.desc%>
+	</div>
+    <% @counting = @counting + 1 %>
+    <% if @counting%5==0 %><%= '<br />' %><% end %>
+	<% end %>
+<% end %>
+</div></div></div>
+
+<% if @counting == 0 %>Il n'y a pas d'images dans cette galerie photo!<% end %>
+
+<br />
+
+<%= render :partial => "upload/uploadfile"%>
+
+<br /><br />
+
+<%= link_to 'Retour', :controller => :galleries, :action => :index2 %>
+
+<br /><br />

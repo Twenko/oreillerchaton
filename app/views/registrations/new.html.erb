@@ -1,0 +1,32 @@
+<head><meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Edition du profil</title>
+  <%= stylesheet_link_tag 'lightbox' %>
+  <%= stylesheet_link_tag 'screen' %></head>
+
+<h2>Sign up</h2>
+
+<% form_for resource_name, resource, :url => registration_path(resource_name) do |f| -%>
+  <%= f.error_messages %>
+  
+  <p><%= f.label :nickname %></p>
+  <p><%= f.text_field :nickname %></p>
+  
+  <p><%= f.label :email %></p>
+  <p><%= f.text_field :email %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %></p>
+  <p><%= f.password_field :password_confirmation %></p>
+  
+  <p><%= f.label :nickname %></p>
+  <p><%= f.text_field :nickname %></p>
+
+  <p><%= f.submit "Sign up" %></p>
+<% end -%>
+
+<%= render :partial => "shared/devise_links" %>
+<%= link_to 'Accueil', root_path %>
+
+<br /><br />

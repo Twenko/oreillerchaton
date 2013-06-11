@@ -1,0 +1,20 @@
+<h1>Galeries</h1>
+
+<div class="section">
+<div class="imageRow">
+<% @galleries.each do |gallery| %>
+	<% if gallery.activate %>
+	<div class="single">
+    <%= link_to (if (gallery.presimage && gallery.presimage!= '') then image_tag(gallery.presimage, :width => '200px') else gallery.name end), gallery_path(gallery) %>
+	<%= gallery.name %>
+	<%= gallery.desc %>
+	</div>
+  	<% end %>
+
+<% end %>
+</div>
+</div>
+
+<br />
+
+<%= link_to 'Accueil', root_path %>

@@ -1,0 +1,8 @@
+<h1>File Upload</h1>
+<%= form_tag({:controller => :upload, :action => 'uploadFile'}, :multipart => true) %>
+<p><label for="upload_file">Select File</label> : 
+<%= file_field 'upload', 'datafile' %></p>
+<p><label for="picture_desc">Description</label> : 
+<%= text_field :pictures, :desc %></p>
+<%= hidden_field :gallery, :id %>
+<%= submit_tag "Upload" %>
